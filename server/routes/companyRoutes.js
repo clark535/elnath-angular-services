@@ -30,7 +30,7 @@ router.post('/', function(req, res){
             res.sendStatus(500);
         } else {
             client.query(`INSERT INTO company (name, country) 
-            VALUES ($1, $2);`, [req.body.task, req.body.status], function(errorMakingQuery, result){
+            VALUES ($1, $2);`, [req.body.name, req.body.country], function(errorMakingQuery, result){
                 done();
                 if (errorMakingQuery) {
                     console.log('error making query', errorMakingQuery);

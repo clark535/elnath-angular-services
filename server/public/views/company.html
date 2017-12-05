@@ -1,8 +1,18 @@
 
 <h1 ng-controller="CompanyController as vm">Companies</h1>
-<div>{{vm}}</div>
+<div>
 <ul>
     <li ng-repeat="company in vm.companies.list">
         {{company.name}} is located in {{company.country}}
     </li>
 </ul>
+</div>
+<div>
+<input ng-model="vm.newCompany.name" placeholder="name">
+<!-- adding name property to newCompany object -->
+<input ng-model="vm.newCompany.country" placeholder="country">
+<!-- adding country property to newCompany object -->
+<button ng-click="vm.addCompany(vm.newCompany)">Submit</button>
+<!-- adding the function addCompany, which was crated in services and connected through controller.
+Passing in the object created in the inputs on click of submit button  -->
+</div>

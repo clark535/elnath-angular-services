@@ -1,0 +1,17 @@
+<h1 ng-controller="CarsController as vm">Cars</h1>
+<div>
+<ul>
+    <li ng-repeat="cars in vm.cars.list">
+        {{cars.year}} {{cars.model}} {{cars.name}} {{cars.country}} {{cars.nickname}}
+    </li>
+</ul>
+</div>
+<div>
+<input ng-model="vm.newCar.year" type="number" placeholder="year">
+<!-- adding name property to newCompany object -->
+<input ng-model="vm.newCar.model" placeholder="model">
+<!-- adding country property to newCompany object -->
+<button ng-click="vm.addCar(vm.newCar)">Submit</button>
+<!-- adding the function addCompany, which was crated in services and connected through controller.
+Passing in the object created in the inputs on click of submit button  -->
+</div>
