@@ -1,6 +1,6 @@
 var app = angular.module('CarApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider) {//decides which views go together
     $routeProvider.when('/', {
         templateUrl: '/views/company.html',
         controller: 'CompanyController as vm'

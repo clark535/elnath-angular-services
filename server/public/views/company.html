@@ -1,3 +1,8 @@
 
 <h1 ng-controller="CompanyController as vm">Companies</h1>
 <div>{{vm}}</div>
+<ul>
+    <li ng-repeat="company in vm.companies.list">
+        {{company.name}} is located in {{company.country}}
+    </li>
+</ul>
