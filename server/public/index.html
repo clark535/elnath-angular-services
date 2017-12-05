@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/angular/angular.js"></script>
+    <script src="vendors/angular-route.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <title>Angular Route intro</title>
+</head>
+<body ng-app="MyApp">
+        <a href="/">Home</a>
+        <a href="#!about">About</a>
+        <a href="http://www.google.com" target="_blank">Google</a>
+    <h1>Angular Route Intro</h1>
+    <div>
+        {{vm.myMessage}}
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>
