@@ -4,7 +4,7 @@ app.service('CarsService', ['$http', function($http){
     
 
     self.cars = {list: [] };//list: makes it an object, keeping it on the DOM even when refreshed.
-    self.newCar = {}; 
+     
 
 
 
@@ -17,5 +17,26 @@ self.getCars = function() {
          self.cars.list = response.data;//this fills up the companies array with the table from the database.
  });
  };
+
+ self.addCars = function(newCar) {
+    console.log('post button 2 was clicked')
+    $http({
+        method: 'POST',
+        url: '/cars',
+        data: newCar        
+        }).then(function(response) {
+            console.log('response', response);
+            self.newCar = response.data;
+            self.newCar = {};
+            // self.newCar.year = '';
+            // self.newCar.model = '';
+            // self.newCar.nickname = '';
+            // self.newCar.company_id = '';
+            self.getCars();
+            
+    });
+    };  
+
+
  self.getCars();
 }]);
